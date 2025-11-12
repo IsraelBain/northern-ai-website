@@ -1,9 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import Logo from './Logo';
+import Button from './ui/Button';
+import { MenuIcon, CloseIcon } from './ui/Icon';
+import { useScrollToSection } from '../hooks/useScrollToSection';
+
+const NavLink = ({ onClick, children }) => (
+  <button
+    onClick={onClick}
+    className="hover:text-northern-green-light transition-colors duration-200"
+  >
+    {children}
+  </button>
+);
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const scrollToSection = useScrollToSection();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,19 +26,9 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      const offset = 80; // Height of fixed navbar
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-      setIsMobileMenuOpen(false);
-    }
+  const handleNavClick = (id) => {
+    scrollToSection(id);
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -37,8 +40,11 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo and Brand */}
-          <div className="flex items-center space-x-3 cursor-pointer" onClick={() => scrollToSection('hero')}>
-            <Logo className="h-10 w-10" />
+          <div
+            className="flex items-center space-x-3 cursor-pointer group"
+            onClick={() => handleNavClick('hero')}
+          >
+            <Logo className="h-10 w-10 transform group-hover:scale-110 transition-transform duration-200" />
             <div>
               <h1 className="text-xl font-bold gradient-text">Northern AI</h1>
               <p className="text-xs text-gray-400">Indigenous Excellence</p>
@@ -47,56 +53,65 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <button onClick={() => scrollToSection('services')} className="hover:text-northern-green-light transition-colors">
-              Services
-            </button>
-            <button onClick={() => scrollToSection('products')} className="hover:text-northern-green-light transition-colors">
-              Products
-            </button>
-            <button onClick={() => scrollToSection('advantages')} className="hover:text-northern-green-light transition-colors">
-              Why Us
-            </button>
-            <button onClick={() => scrollToSection('team')} className="hover:text-northern-green-light transition-colors">
-              Team
-            </button>
-            <button onClick={() => scrollToSection('contact')} className="btn-primary text-sm">
+            <NavLink onClick={() => handleNavClick('services')}>Services</NavLink>
+            <NavLink onClick={() => handleNavClick('products')}>Products</NavLink>
+            <NavLink onClick={() => handleNavClick('advantages')}>Why Us</NavLink>
+            <NavLink onClick={() => handleNavClick('team')}>Team</NavLink>
+            <Button
+              variant="primary"
+              size="sm"
+              onClick={() => handleNavClick('contact')}
+            >
               Get Started
-            </button>
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 glass rounded-lg"
+            className="md:hidden p-2 glass rounded-lg hover:bg-opacity-10 transition-all"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle mobile menu"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              {isMobileMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
+            {isMobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 glass rounded-lg p-4 space-y-3">
-            <button onClick={() => scrollToSection('services')} className="block w-full text-left py-2 hover:text-northern-green-light transition-colors">
+          <div className="md:hidden mt-4 glass rounded-lg p-4 space-y-3 animate-fade-in">
+            <button
+              onClick={() => handleNavClick('services')}
+              className="block w-full text-left py-2 hover:text-northern-green-light transition-colors"
+            >
               Services
             </button>
-            <button onClick={() => scrollToSection('products')} className="block w-full text-left py-2 hover:text-northern-green-light transition-colors">
+            <button
+              onClick={() => handleNavClick('products')}
+              className="block w-full text-left py-2 hover:text-northern-green-light transition-colors"
+            >
               Products
             </button>
-            <button onClick={() => scrollToSection('advantages')} className="block w-full text-left py-2 hover:text-northern-green-light transition-colors">
+            <button
+              onClick={() => handleNavClick('advantages')}
+              className="block w-full text-left py-2 hover:text-northern-green-light transition-colors"
+            >
               Why Us
             </button>
-            <button onClick={() => scrollToSection('team')} className="block w-full text-left py-2 hover:text-northern-green-light transition-colors">
+            <button
+              onClick={() => handleNavClick('team')}
+              className="block w-full text-left py-2 hover:text-northern-green-light transition-colors"
+            >
               Team
             </button>
-            <button onClick={() => scrollToSection('contact')} className="btn-primary w-full text-center text-sm mt-2">
+            <Button
+              variant="primary"
+              size="sm"
+              fullWidth
+              onClick={() => handleNavClick('contact')}
+              className="mt-2"
+            >
               Get Started
-            </button>
+            </Button>
           </div>
         )}
       </div>

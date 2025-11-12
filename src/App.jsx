@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Navigation from './components/Navigation';
-import Hero from './components/Hero';
-import Services from './components/Services';
+import HeroSection from './components/sections/HeroSection';
+import ServicesSection from './components/sections/ServicesSection';
 import Products from './components/Products';
 import Team from './components/Team';
 import Advantages from './components/Advantages';
@@ -41,9 +41,9 @@ function App() {
     <div className="min-h-screen">
       <Navigation />
       <main>
-        <Hero />
+        <HeroSection />
         <div className="section-separator"></div>
-        <Services />
+        <ServicesSection />
         <div className="section-separator"></div>
         <Products />
         <div className="section-separator"></div>
