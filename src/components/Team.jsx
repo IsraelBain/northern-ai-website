@@ -13,7 +13,11 @@ const Team = () => {
         "Cloud Infrastructure",
         "Geospatial Data Science"
       ],
-      image: "👨‍💻"
+      icon: (
+        <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      )
     },
     {
       name: "Noah Bain",
@@ -26,7 +30,12 @@ const Team = () => {
         "System Integration",
         "Engineering Prototyping"
       ],
-      image: "⚙️"
+      icon: (
+        <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+      )
     }
   ];
 
@@ -58,8 +67,8 @@ const Team = () => {
             >
               {/* Avatar */}
               <div className="flex items-start space-x-6 mb-6">
-                <div className="glass p-6 rounded-2xl text-6xl">
-                  {member.image}
+                <div className="glass p-6 rounded-2xl text-northern-green-light">
+                  {member.icon}
                 </div>
                 <div className="flex-1">
                   <h3 className="text-2xl font-bold text-white mb-1">{member.name}</h3>
@@ -105,17 +114,29 @@ const Team = () => {
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="text-center">
-              <div className="text-3xl mb-2">🌲</div>
+              <div className="flex justify-center mb-3">
+                <svg className="w-10 h-10 text-northern-green-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                </svg>
+              </div>
               <h4 className="font-semibold text-white mb-2">Indigenous Pride</h4>
               <p className="text-sm text-gray-400">Majority indigenous-owned and committed to community growth</p>
             </div>
             <div className="text-center">
-              <div className="text-3xl mb-2">🚀</div>
+              <div className="flex justify-center mb-3">
+                <svg className="w-10 h-10 text-northern-green-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
               <h4 className="font-semibold text-white mb-2">Innovation First</h4>
               <p className="text-sm text-gray-400">Pushing boundaries with cutting-edge technology and solutions</p>
             </div>
             <div className="text-center">
-              <div className="text-3xl mb-2">🤝</div>
+              <div className="flex justify-center mb-3">
+                <svg className="w-10 h-10 text-northern-green-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                </svg>
+              </div>
               <h4 className="font-semibold text-white mb-2">Client Success</h4>
               <p className="text-sm text-gray-400">Your success is our mission. We deliver results that matter</p>
             </div>

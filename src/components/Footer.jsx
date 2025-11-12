@@ -29,8 +29,8 @@ const Footer = () => {
               in software, AI, and mechanical engineering.
             </p>
             <div className="flex items-center space-x-2 text-sm">
-              <span className="glass px-3 py-1 rounded-full text-gray-300">🍁 Indigenous-Owned</span>
-              <span className="glass px-3 py-1 rounded-full text-gray-300">🇨🇦 Canadian</span>
+              <span className="glass px-3 py-1 rounded-full text-gray-300">Indigenous-Owned</span>
+              <span className="glass px-3 py-1 rounded-full text-gray-300">Canadian</span>
             </div>
           </div>
 
