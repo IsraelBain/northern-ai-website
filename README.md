@@ -146,7 +146,7 @@ Northern AI is an Indigenous-owned consulting firm specializing in:
 ✅ Open data philosophy (no proprietary lock-in)
 ✅ Junior miner focus (affordable pricing)
 ✅ Multi-commodity coverage
-✅ 85-90% target prediction accuracy
+✅ 78% current prediction accuracy
 
 ## 👥 Team
 
@@ -163,7 +163,7 @@ This is a private repository for Northern AI's official website.
 
 ## 📧 Contact
 
-- **Email:** contact@northern-ai.ca
+- **Email:** systemsnorthernai@gmail.com
 - **Website:** [northern-ai.ca](https://northern-ai.ca) *(coming soon)*
 
 ---

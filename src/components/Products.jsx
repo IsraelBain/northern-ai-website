@@ -49,7 +49,7 @@ const Products = () => {
     },
     {
       title: "Proven Accuracy",
-      description: "Target AUC 0.85-0.90 with continuous model improvements and validation",
+      description: "Current AUC 0.78 with continuous model improvements and validation",
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -145,7 +145,7 @@ const Products = () => {
         </div>
 
         {/* Features grid */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
+        <div className="grid md:grid-cols-3 gap-6">
           {features.map((feature, idx) => (
             <div key={idx} className="glass p-6 rounded-xl glass-hover">
               <div className="text-northern-green-light mb-4">{feature.icon}</div>
@@ -153,27 +153,6 @@ const Products = () => {
               <p className="text-sm text-gray-400">{feature.description}</p>
             </div>
           ))}
-        </div>
-
-        {/* Competitive positioning */}
-        <div className="glass p-8 rounded-2xl">
-          <h4 className="text-2xl font-bold mb-6 text-center gradient-text">
-            Competing with Industry Leaders
-          </h4>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="text-gray-400 font-semibold mb-2">Goldspot Discoveries</div>
-              <div className="text-sm text-gray-500">Multi-modal data, 100+ deposits trained</div>
-            </div>
-            <div className="text-center border-l border-r border-northern-green-light border-opacity-30">
-              <div className="text-northern-green-light font-bold mb-2 text-xl">Northern AI</div>
-              <div className="text-sm text-white font-semibold">Indigenous-owned, Open data, Junior miner focus</div>
-            </div>
-            <div className="text-center">
-              <div className="text-gray-400 font-semibold mb-2">KoBold Metals</div>
-              <div className="text-sm text-gray-500">$195M funding, Battery metals focus</div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

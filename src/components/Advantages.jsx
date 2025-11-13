@@ -49,7 +49,7 @@ const Advantages = () => {
         </svg>
       ),
       title: "Proven Methodology",
-      description: "Advanced feature engineering with elevation, geochemistry, radiometrics, and satellite data fusion. Target accuracy of 85-90% AUC.",
+      description: "Advanced feature engineering with elevation, geochemistry, radiometrics, and satellite data fusion. Current accuracy of 78% AUC.",
       impact: "Industry-Leading Accuracy"
     },
     {
