@@ -288,6 +288,39 @@ const Products = () => {
             </div>
           </div>
         </div>
+
+        {/* Integrated Solutions */}
+        <div className="mt-16 glass p-8 rounded-2xl max-w-4xl mx-auto">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold gradient-text mb-3">Complete Exploration to Production Support</h3>
+            <p className="text-gray-300">
+              The only company offering both AI exploration targeting and mining operations consulting
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="text-center p-6 glass rounded-xl">
+              <div className="text-northern-green-light mb-4 flex justify-center">
+                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                </svg>
+              </div>
+              <h4 className="text-xl font-bold text-white mb-2">Exploration Phase</h4>
+              <p className="text-sm text-gray-300 mb-4">AI prospectivity analysis to identify high-value drill targets</p>
+              <p className="text-xs text-gray-400">Led by Israel Bain</p>
+            </div>
+            <div className="text-center p-6 glass rounded-xl">
+              <div className="text-northern-green-light mb-4 flex justify-center">
+                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <h4 className="text-xl font-bold text-white mb-2">Operations Phase</h4>
+              <p className="text-sm text-gray-300 mb-4">Engineering consulting for feasibility, material handling, and process optimization</p>
+              <p className="text-xs text-gray-400">Led by Noah Bain</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -4,7 +4,7 @@ const Team = () => {
   const team = [
     {
       name: "Israel Bain",
-      role: "Founder & Chief Technology Officer",
+      role: "Co-Founder & Chief Technology Officer",
       specialties: ["Software Architecture", "Machine Learning", "AI Development", "Geospatial Analytics"],
       bio: "Leading the development of Northern AI's flagship mineral exploration ML platform. Expert in full-stack development, cloud architecture, and cutting-edge AI solutions.",
       expertise: [
@@ -18,18 +18,17 @@ const Team = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
         </svg>
       )
-    }
-    /* COMMENTED OUT - Noah Bain section
-    ,{
+    },
+    {
       name: "Noah Bain",
       role: "Co-Founder & Chief Engineering Officer",
-      specialties: ["Mechanical Design", "System Integration", "Thermal Analysis", "Prototyping"],
-      bio: "Bringing mechanical engineering excellence to Northern AI. Specializes in complex system design, thermal analysis, and innovative engineering solutions.",
+      specialties: ["Material Handling", "Mining Operations", "Process Engineering", "Systems Integration"],
+      bio: "Brings deep mining operations expertise to Northern AI. Specializes in material handling systems, feasibility studies, and operational optimization for mining operations. Expert in bridging technical engineering with business outcomes.",
       expertise: [
-        "CAD Design & Modeling",
-        "Thermal Analysis",
-        "System Integration",
-        "Engineering Prototyping"
+        "Feasibility & Due Diligence Studies",
+        "CAPEX/OPEX Analysis & Optimization",
+        "Material Handling Systems Design",
+        "Process Flow Development & Integration"
       ],
       icon: (
         <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -38,7 +37,6 @@ const Team = () => {
         </svg>
       )
     }
-    */
   ];
 
   return (
@@ -61,7 +59,7 @@ const Team = () => {
         </div>
 
         {/* Team grid */}
-        <div className="grid md:grid-cols-1 gap-8 max-w-3xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {team.map((member, index) => (
             <div
               key={index}
