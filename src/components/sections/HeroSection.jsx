@@ -9,10 +9,10 @@ const HeroSection = () => {
   const scrollToSection = useScrollToSection();
 
   const stats = [
-    { value: '85%+', label: 'Target Prediction Accuracy' },
+    { value: '78%', label: 'Validated Accuracy' },
     { value: '100%', label: 'Indigenous Owned' },
-    { value: 'Multi', label: 'Commodity Coverage' },
-    { value: 'Open', label: 'Data Philosophy' }
+    { value: '18,994', label: 'Deposits Trained' },
+    { value: 'ON/QC', label: 'Ontario & Quebec Focus' }
   ];
 
   return (
@@ -40,8 +40,8 @@ const HeroSection = () => {
 
           {/* Main heading */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight animate-fade-in">
-            <span className="block">Advanced AI Solutions</span>
-            <span className="block gradient-text">For Modern Industry</span>
+            <span className="block">AI-Powered Mineral</span>
+            <span className="block gradient-text">Prospectivity for Junior Explorers</span>
           </h1>
 
           {/* Subheading */}
@@ -49,8 +49,8 @@ const HeroSection = () => {
             className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed animate-fade-in"
             style={{ animationDelay: '200ms' }}
           >
-            Pioneering the future of mineral exploration with cutting-edge machine learning.
-            <span className="block mt-2">World-class consulting in software, AI, and mechanical engineering.</span>
+            Find your next drill target in 2 weeks.
+            <span className="block mt-2">Same targeting science as Goldspot, priced for juniors.</span>
           </p>
 
           {/* CTA Buttons */}
@@ -59,10 +59,10 @@ const HeroSection = () => {
             style={{ animationDelay: '400ms' }}
           >
             <Button onClick={() => scrollToSection('products')}>
-              Explore Our AI Technology
+              View Case Study
             </Button>
             <Button variant="secondary" onClick={() => scrollToSection('contact')}>
-              Schedule Consultation
+              Book Discovery Call
             </Button>
           </div>
 

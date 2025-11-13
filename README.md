@@ -4,7 +4,7 @@
 [![Built with React](https://img.shields.io/badge/Built%20with-React-61dafb)](https://reactjs.org/)
 [![Styled with Tailwind](https://img.shields.io/badge/Styled%20with-Tailwind%20CSS-38bdf8)](https://tailwindcss.com/)
 
-Modern, professional website for Northern AI - an Indigenous-owned technology consulting firm specializing in AI, software development, and mechanical engineering.
+Modern, professional website for Northern AI - an Indigenous-owned AI mineral prospectivity company serving junior gold exploration companies in Ontario and Quebec.
 
 ## 🌟 Features
 
@@ -89,11 +89,11 @@ northern-ai-website/
 
 ## 🌐 Sections
 
-1. **Hero** - Compelling value proposition with animated background
-2. **Services** - Software, AI, and Mechanical Engineering consulting
-3. **Products** - AI Mineral Exploration Platform showcase
-4. **Advantages** - Competitive positioning vs. industry leaders
-5. **Team** - Israel and Noah Bain profiles
+1. **Hero** - AI-powered mineral prospectivity for junior explorers
+2. **Services** - Software Development and AI Mineral Prospectivity
+3. **Products** - AI Mineral Exploration Platform with pricing
+4. **Advantages** - Competitive positioning vs. Goldspot and KoBold
+5. **Team** - Israel Bain profile (Founder & CTO)
 6. **Contact** - Form and contact information
 7. **Footer** - Quick links and company info
 
@@ -132,26 +132,25 @@ The `dist/` folder contains the production-ready files.
 
 ## 🎯 About Northern AI
 
-Northern AI is an Indigenous-owned consulting firm specializing in:
+Northern AI is an Indigenous-owned AI mineral prospectivity company specializing in:
 
-- **Software Consulting** - Full-stack development and cloud architecture
-- **AI & Machine Learning** - Custom ML models and geospatial AI
-- **Mechanical Engineering** - CAD design, thermal analysis, prototyping
-- **Mineral Exploration AI** - Revolutionary ML platform competing with industry giants
+- **AI Mineral Prospectivity** - Proven AI model for drill target ranking (78% validated accuracy)
+- **Software Development** - Custom geospatial software for mineral exploration
+- **Junior Miner Focus** - Affordable targeting at $10K-$50K (not Goldspot's $100K+)
+- **Fast Delivery** - 2-week turnaround from property data to drill targets
 
 ### Key Differentiators
 
-✅ Indigenous-owned and operated
-✅ Canadian sovereignty (government-preferred local tech)
+✅ 78% validated accuracy (AUC 0.78, spatially validated)
+✅ Indigenous-owned and operated (100%)
+✅ $10K-$50K pricing (not $100K+ like Goldspot)
+✅ 2-week delivery (not 3+ months)
+✅ Junior miner focused (Ontario & Quebec gold explorers)
 ✅ Open data philosophy (no proprietary lock-in)
-✅ Junior miner focus (affordable pricing)
-✅ Multi-commodity coverage
-✅ 78% current prediction accuracy
 
 ## 👥 Team
 
-- **Israel Bain** - Co-Founder & CTO (Software, AI, ML)
-- **Noah Bain** - Co-Founder & CEO (Mechanical Engineering)
+- **Israel Bain** - Founder & CTO (Software, AI, ML, Geospatial Analytics)
 
 ## 📄 License
 
@@ -164,6 +163,7 @@ This is a private repository for Northern AI's official website.
 ## 📧 Contact
 
 - **Email:** systemsnorthernai@gmail.com
+- **Phone:** 236-380-1394
 - **Website:** [northern-ai.ca](https://northern-ai.ca) *(coming soon)*
 
 ---

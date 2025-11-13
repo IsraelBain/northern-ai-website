@@ -59,12 +59,10 @@ const Products = () => {
   ];
 
   const dataLayers = [
-    { name: "Elevation & Topography", status: "Active", color: "bg-green-500" },
-    { name: "Stream Sediment Geochemistry", status: "Active", color: "bg-green-500" },
-    { name: "Radiometric Geophysics", status: "Active", color: "bg-green-500" },
-    { name: "Landsat Band Ratios", status: "In Development", color: "bg-yellow-500" },
-    { name: "Structural Lineaments", status: "In Development", color: "bg-yellow-500" },
-    { name: "Drill Hole Database", status: "Planned", color: "bg-blue-500" }
+    { name: "Magnetic Data (RTP, HGM, Vertical Derivative)", status: "Active", color: "bg-green-500" },
+    { name: "Geological Data (Bedrock types, proximity)", status: "Active", color: "bg-green-500" },
+    { name: "Geodiversity Index", status: "Active", color: "bg-green-500" },
+    { name: "Terrain & Elevation Features", status: "Active", color: "bg-green-500" }
   ];
 
   return (
@@ -82,8 +80,9 @@ const Products = () => {
           </div>
           <h2 className="section-title">AI Mineral Exploration Platform</h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Revolutionary machine learning model for mineral deposit prediction.
-            Competing with industry leaders like Goldspot Discoveries and KoBold Metals.
+            AI mineral prospectivity analysis trained on 18,994 known deposits across Ontario and Quebec.
+            Delivers top 20 drill targets with prospectivity heatmap in 2 weeks.
+            Perfect for junior explorers who need targeting but can't afford Goldspot's $100K+ studies.
           </p>
         </div>
 
@@ -92,33 +91,47 @@ const Products = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h3 className="text-3xl font-bold mb-6 gradient-text">
-                Next-Generation Mineral Discovery
+                Same Science as Goldspot. Built for Juniors.
               </h3>
               <p className="text-gray-300 mb-6 leading-relaxed">
-                Our proprietary AI model leverages multi-modal geospatial data to predict mineral deposit
-                locations with unprecedented accuracy. Built specifically for the Canadian market with a
-                focus on junior miners who need affordable, powerful tools.
+                Our AI model uses the same proven targeting methodology as industry leaders but at a fraction
+                of the cost. Trained on 18,994 deposits with 78% validated accuracy (AUC 0.78).
+                Get professional-grade drill targeting in 2 weeks, not months.
               </p>
               <div className="space-y-4">
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-northern-green-light rounded-full mt-2 mr-3"></div>
-                  <div>
-                    <p className="font-semibold text-white">Cost-Effective for Junior Miners</p>
-                    <p className="text-sm text-gray-400">Affordable pricing model designed for exploration companies of all sizes</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-northern-green-light rounded-full mt-2 mr-3"></div>
-                  <div>
-                    <p className="font-semibold text-white">Regional Expertise</p>
-                    <p className="text-sm text-gray-400">Specialized models for Ontario, BC, Quebec, and expanding coverage</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-northern-green-light rounded-full mt-2 mr-3"></div>
-                  <div>
-                    <p className="font-semibold text-white">Continuous Learning</p>
-                    <p className="text-sm text-gray-400">Models improve with new data and drill hole results</p>
+                <div>
+                  <p className="font-semibold text-white mb-3">What You Get:</p>
+                  <div className="space-y-2">
+                    <div className="flex items-center text-sm text-gray-300">
+                      <svg className="w-5 h-5 mr-2 text-northern-green-light" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                      Top 20 ranked drill targets (with coordinates)
+                    </div>
+                    <div className="flex items-center text-sm text-gray-300">
+                      <svg className="w-5 h-5 mr-2 text-northern-green-light" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                      Prospectivity heatmap (PDF + GIS files)
+                    </div>
+                    <div className="flex items-center text-sm text-gray-300">
+                      <svg className="w-5 h-5 mr-2 text-northern-green-light" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                      Technical report (15-20 pages)
+                    </div>
+                    <div className="flex items-center text-sm text-gray-300">
+                      <svg className="w-5 h-5 mr-2 text-northern-green-light" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                      Shapefiles, GeoJSON, KML for field use
+                    </div>
+                    <div className="flex items-center text-sm text-gray-300">
+                      <svg className="w-5 h-5 mr-2 text-northern-green-light" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                      <strong>2-week turnaround</strong>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -145,7 +158,7 @@ const Products = () => {
         </div>
 
         {/* Features grid */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-6 mb-16">
           {features.map((feature, idx) => (
             <div key={idx} className="glass p-6 rounded-xl glass-hover">
               <div className="text-northern-green-light mb-4">{feature.icon}</div>
@@ -153,6 +166,127 @@ const Products = () => {
               <p className="text-sm text-gray-400">{feature.description}</p>
             </div>
           ))}
+        </div>
+
+        {/* Pricing Section */}
+        <div className="mb-16">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold mb-4 gradient-text">Pricing</h3>
+            <p className="text-gray-300 max-w-2xl mx-auto">
+              Pay per property, no long-term contracts. 2-week delivery guaranteed.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Pilot Project */}
+            <div className="glass p-8 rounded-2xl glass-hover">
+              <div className="text-center mb-6">
+                <h4 className="text-xl font-bold text-white mb-2">Pilot Project</h4>
+                <div className="text-4xl font-bold gradient-text mb-2">$10,000</div>
+                <p className="text-sm text-gray-400">Limited slots available</p>
+              </div>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-start text-sm text-gray-300">
+                  <svg className="w-5 h-5 mr-2 text-northern-green-light flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  Single property analysis
+                </li>
+                <li className="flex items-start text-sm text-gray-300">
+                  <svg className="w-5 h-5 mr-2 text-northern-green-light flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  Top 20 drill targets
+                </li>
+                <li className="flex items-start text-sm text-gray-300">
+                  <svg className="w-5 h-5 mr-2 text-northern-green-light flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  Prospectivity heatmap
+                </li>
+                <li className="flex items-start text-sm text-gray-300">
+                  <svg className="w-5 h-5 mr-2 text-northern-green-light flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  2-week delivery
+                </li>
+              </ul>
+            </div>
+
+            {/* Single Property */}
+            <div className="glass p-8 rounded-2xl glass-hover border-2 border-northern-green-light relative">
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                <span className="bg-northern-green-light text-northern-gray-dark px-4 py-1 rounded-full text-xs font-bold">
+                  POPULAR
+                </span>
+              </div>
+              <div className="text-center mb-6">
+                <h4 className="text-xl font-bold text-white mb-2">Single Property</h4>
+                <div className="text-4xl font-bold gradient-text mb-2">$30,000</div>
+                <p className="text-sm text-gray-400">Per property analysis</p>
+              </div>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-start text-sm text-gray-300">
+                  <svg className="w-5 h-5 mr-2 text-northern-green-light flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  Everything in Pilot
+                </li>
+                <li className="flex items-start text-sm text-gray-300">
+                  <svg className="w-5 h-5 mr-2 text-northern-green-light flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  Full technical report (15-20 pages)
+                </li>
+                <li className="flex items-start text-sm text-gray-300">
+                  <svg className="w-5 h-5 mr-2 text-northern-green-light flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  All GIS formats (Shapefiles, GeoJSON, KML)
+                </li>
+                <li className="flex items-start text-sm text-gray-300">
+                  <svg className="w-5 h-5 mr-2 text-northern-green-light flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  Priority support
+                </li>
+              </ul>
+            </div>
+
+            {/* Annual License */}
+            <div className="glass p-8 rounded-2xl glass-hover">
+              <div className="text-center mb-6">
+                <h4 className="text-xl font-bold text-white mb-2">Annual License</h4>
+                <div className="text-4xl font-bold gradient-text mb-2">$50,000</div>
+                <p className="text-sm text-gray-400">Unlimited properties/year</p>
+              </div>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-start text-sm text-gray-300">
+                  <svg className="w-5 h-5 mr-2 text-northern-green-light flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  Unlimited property analyses
+                </li>
+                <li className="flex items-start text-sm text-gray-300">
+                  <svg className="w-5 h-5 mr-2 text-northern-green-light flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  All features included
+                </li>
+                <li className="flex items-start text-sm text-gray-300">
+                  <svg className="w-5 h-5 mr-2 text-northern-green-light flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  Dedicated support channel
+                </li>
+                <li className="flex items-start text-sm text-gray-300">
+                  <svg className="w-5 h-5 mr-2 text-northern-green-light flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  Custom model training available
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>

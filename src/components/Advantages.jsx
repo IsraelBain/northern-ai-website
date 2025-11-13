@@ -29,7 +29,7 @@ const Advantages = () => {
         </svg>
       ),
       title: "Junior Miner Focus",
-      description: "Affordable, powerful tools designed specifically for exploration companies that need enterprise-grade technology without enterprise prices.",
+      description: "Affordable drill targeting designed specifically for junior gold explorers. Get enterprise-grade technology at $10K-$50K, not Goldspot's $100K+.",
       impact: "Accessible Pricing"
     },
     {
@@ -58,9 +58,9 @@ const Advantages = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
       ),
-      title: "Rapid Innovation",
-      description: "Agile development with continuous model improvements. We move fast and adapt to client needs without corporate bureaucracy.",
-      impact: "Quick Turnaround"
+      title: "Speed",
+      description: "2-week turnaround from property data to drill targets. No 3-month waiting lists. Perfect for juniors who need to move fast on new properties.",
+      impact: "2-Week Delivery"
     }
   ];
 
@@ -76,7 +76,7 @@ const Advantages = () => {
         <div className="text-center mb-16">
           <h2 className="section-title">Why Northern AI</h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Strategic advantages that set us apart from industry giants like Goldspot and KoBold Metals
+            Same science as Goldspot. Built for juniors who can't afford $100K+ studies.
           </p>
         </div>
 
@@ -157,38 +157,38 @@ const Advantages = () => {
             <div className="space-y-4 glass bg-gradient-to-br from-northern-green-dark to-northern-green p-6 rounded-2xl">
               <div className="text-center mb-6">
                 <h4 className="text-2xl font-bold text-white mb-2">Northern AI</h4>
-                <p className="text-sm text-northern-green-light font-semibold">Indigenous Excellence</p>
+                <p className="text-sm text-northern-green-light font-semibold">78% Accuracy • $10K-$50K • 2 weeks</p>
               </div>
               <div className="space-y-2 text-sm">
                 <div className="flex items-center text-white font-semibold">
                   <svg className="w-4 h-4 mr-2 text-northern-green-light" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  Multi-modal data fusion
+                  78% validated accuracy (AUC 0.78)
                 </div>
                 <div className="flex items-center text-white font-semibold">
                   <svg className="w-4 h-4 mr-2 text-northern-green-light" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  Canadian sovereignty
+                  Canadian Indigenous-owned
                 </div>
                 <div className="flex items-center text-white font-semibold">
                   <svg className="w-4 h-4 mr-2 text-northern-green-light" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  Open data philosophy
+                  $10K-$50K (not $100K+)
                 </div>
                 <div className="flex items-center text-white font-semibold">
                   <svg className="w-4 h-4 mr-2 text-northern-green-light" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  Junior miner pricing
+                  2-week delivery
                 </div>
                 <div className="flex items-center text-white font-semibold">
                   <svg className="w-4 h-4 mr-2 text-northern-green-light" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  Multi-commodity
+                  Junior miner focused
                 </div>
               </div>
             </div>

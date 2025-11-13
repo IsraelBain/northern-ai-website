@@ -30,43 +30,43 @@ const Hero = () => {
 
           {/* Main heading */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
-            <span className="block">Advanced AI Solutions</span>
-            <span className="block gradient-text">For Modern Industry</span>
+            <span className="block">AI-Powered Mineral</span>
+            <span className="block gradient-text">Prospectivity for Junior Explorers</span>
           </h1>
 
           {/* Subheading */}
           <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
-            Pioneering the future of mineral exploration with cutting-edge machine learning.
-            <span className="block mt-2">World-class consulting in software, AI, and mechanical engineering.</span>
+            Find your next drill target in 2 weeks.
+            <span className="block mt-2">Same targeting science as Goldspot, priced for juniors.</span>
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
             <button onClick={() => scrollToSection('products')} className="btn-primary w-full sm:w-auto">
-              Explore Our AI Technology
+              View Case Study
             </button>
             <button onClick={() => scrollToSection('contact')} className="btn-secondary w-full sm:w-auto">
-              Schedule Consultation
+              Book Discovery Call
             </button>
           </div>
 
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20">
             <div className="glass p-6 rounded-2xl glass-hover">
-              <div className="text-4xl font-bold gradient-text mb-2">85%+</div>
-              <div className="text-gray-400 text-sm">Target Prediction Accuracy</div>
+              <div className="text-4xl font-bold gradient-text mb-2">78%</div>
+              <div className="text-gray-400 text-sm">Validated Accuracy</div>
             </div>
             <div className="glass p-6 rounded-2xl glass-hover">
               <div className="text-4xl font-bold gradient-text mb-2">100%</div>
               <div className="text-gray-400 text-sm">Indigenous Owned</div>
             </div>
             <div className="glass p-6 rounded-2xl glass-hover">
-              <div className="text-4xl font-bold gradient-text mb-2">Multi</div>
-              <div className="text-gray-400 text-sm">Commodity Coverage</div>
+              <div className="text-4xl font-bold gradient-text mb-2">18,994</div>
+              <div className="text-gray-400 text-sm">Deposits Trained</div>
             </div>
             <div className="glass p-6 rounded-2xl glass-hover">
-              <div className="text-4xl font-bold gradient-text mb-2">Open</div>
-              <div className="text-gray-400 text-sm">Data Philosophy</div>
+              <div className="text-4xl font-bold gradient-text mb-2">ON/QC</div>
+              <div className="text-gray-400 text-sm">Ontario & Quebec Focus</div>
             </div>
           </div>
         </div>
