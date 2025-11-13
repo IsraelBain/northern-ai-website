@@ -17,6 +17,14 @@ const HeroSection = () => {
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+      {/* TODO: Add hero background image of mining site or geologists in field
+          Recommended sources:
+          - Unsplash: search "mining canada", "geology exploration"
+          - Pexels: search "mining exploration", "canadian shield"
+          - Stock photo: aerial mine views, geologists analyzing rocks
+          Suggested style: Faded opacity (20-30%), dark overlay for text readability
+      */}
+
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-72 h-72 bg-northern-green opacity-10 rounded-full blur-3xl animate-float"></div>

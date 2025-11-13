@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react';
 import Navigation from './components/Navigation';
 import HeroSection from './components/sections/HeroSection';
-import ServicesSection from './components/sections/ServicesSection';
+import CostComparison from './components/CostComparison';
+import ResultsVisualization from './components/ResultsVisualization';
 import Products from './components/Products';
-import Team from './components/Team';
+import Mission from './components/Mission';
+import ServicesSection from './components/sections/ServicesSection';
 import Advantages from './components/Advantages';
+import Team from './components/Team';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -43,9 +46,15 @@ function App() {
       <main>
         <HeroSection />
         <div className="section-separator"></div>
-        <ServicesSection />
+        <CostComparison />
+        <div className="section-separator"></div>
+        <ResultsVisualization />
         <div className="section-separator"></div>
         <Products />
+        <div className="section-separator"></div>
+        <Mission />
+        <div className="section-separator"></div>
+        <ServicesSection />
         <div className="section-separator"></div>
         <Advantages />
         <div className="section-separator"></div>
