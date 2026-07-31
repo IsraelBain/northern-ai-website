@@ -1,236 +1,175 @@
 import React, { useState } from 'react';
 
+const FORMSPREE_ID = 'xdaqvdpw';
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
     company: '',
-    interest: 'consulting',
-    message: ''
+    email: '',
+    interest: '',
+    message: '',
+    _gotcha: '',
   });
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // In production, this would connect to your backend/email service
-    console.log('Form submitted:', formData);
-    alert('Thank you for your interest! We will contact you shortly.');
-  };
+  const [status, setStatus] = useState('idle');
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus('submitting');
+    try {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          company: formData.company,
+          email: formData.email,
+          interest: formData.interest,
+          message: formData.message,
+          _gotcha: formData._gotcha,
+        }),
+      });
+      setStatus(res.ok ? 'success' : 'error');
+    } catch {
+      setStatus('error');
+    }
+  };
+
+  const inputClass =
+    'w-full px-4 py-3 bg-white/[0.03] border border-white/[0.08] rounded-lg text-white placeholder-muted focus:outline-none focus:border-accent/40 focus:ring-1 focus:ring-accent/20 transition-all text-sm';
+
   return (
-    <section id="contact" className="py-24 relative">
-      {/* Background decoration */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-northern-green-light opacity-10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-emerald-600 opacity-10 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }}></div>
-      </div>
+    <section id="contact" className="py-20 md:py-28 px-6">
+      <div className="max-w-md mx-auto">
+        <p className="text-accent text-sm font-medium tracking-wide uppercase mb-4 text-center">
+          Get started
+        </p>
+        <h2 className="text-2xl md:text-3xl font-bold text-white mb-3 text-center">
+          Book a walkthrough
+        </h2>
+        <p className="text-sm text-muted text-center mb-10 max-w-sm mx-auto leading-relaxed">
+          A 30-minute screen share of live model output over real ground. Or
+          start with the free first look: send your claim outline, we send back
+          a targeting brief and Google Earth file.
+        </p>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        {/* Section header */}
-        <div className="text-center mb-16">
-          <h2 className="section-title">Let's Work Together</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Ready to find your next drill target? Book a 15-minute discovery call to discuss your exploration property.
-          </p>
-          <div className="mt-4 glass px-6 py-3 rounded-full inline-block">
-            <span className="text-northern-green-light font-semibold">Running 2 pilot projects this month at $10K (normally $30K)</span>
+        {status === 'success' ? (
+          <div className="border border-accent/30 rounded-xl p-8 text-center bg-accent/[0.03]">
+            <p className="text-accent text-base font-medium">
+              Got it. We will reply within two business days.
+            </p>
           </div>
-        </div>
+        ) : (
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <input
+              type="text"
+              name="_gotcha"
+              value={formData._gotcha}
+              onChange={handleChange}
+              style={{ display: 'none' }}
+              tabIndex={-1}
+              autoComplete="off"
+            />
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Contact form */}
-          <div className="glass p-8 rounded-3xl">
-            <h3 className="text-2xl font-bold mb-6 gradient-text">Send us a message</h3>
-            <form onSubmit={handleSubmit} className="space-y-5">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                  Full Name *
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-black bg-opacity-30 border border-white border-opacity-10 rounded-lg focus:outline-none focus:border-northern-green-light transition-colors text-white"
-                  placeholder="John Doe"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                  Email Address *
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-black bg-opacity-30 border border-white border-opacity-10 rounded-lg focus:outline-none focus:border-northern-green-light transition-colors text-white"
-                  placeholder="john@company.com"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="company" className="block text-sm font-medium text-gray-300 mb-2">
-                  Company
-                </label>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-black bg-opacity-30 border border-white border-opacity-10 rounded-lg focus:outline-none focus:border-northern-green-light transition-colors text-white"
-                  placeholder="Your Company Name"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="interest" className="block text-sm font-medium text-gray-300 mb-2">
-                  I'm interested in *
-                </label>
-                <select
-                  id="interest"
-                  name="interest"
-                  required
-                  value={formData.interest}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-black bg-opacity-30 border border-white border-opacity-10 rounded-lg focus:outline-none focus:border-northern-green-light transition-colors text-white"
-                >
-                  <option value="consulting">Consulting Services</option>
-                  <option value="ai-platform">AI Mineral Exploration Platform</option>
-                  <option value="software">Software Development</option>
-                  <option value="mechanical">Mechanical Engineering</option>
-                  <option value="partnership">Partnership Opportunities</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                  Message *
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows="4"
-                  className="w-full px-4 py-3 bg-black bg-opacity-30 border border-white border-opacity-10 rounded-lg focus:outline-none focus:border-northern-green-light transition-colors text-white resize-none"
-                  placeholder="Tell us about your project or inquiry..."
-                ></textarea>
-              </div>
-
-              <button type="submit" className="btn-primary w-full">
-                Send Message
-              </button>
-            </form>
-          </div>
-
-          {/* Contact info and additional details */}
-          <div className="space-y-6">
-            {/* Quick contact */}
-            <div className="glass p-8 rounded-2xl">
-              <h4 className="text-xl font-bold mb-6 text-white">Get In Touch</h4>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-4">
-                  <div className="glass p-3 rounded-lg">
-                    <svg className="w-6 h-6 text-northern-green-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-white">Email</p>
-                    <p className="text-gray-400 text-sm">systemsnorthernai@gmail.com</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="glass p-3 rounded-lg">
-                    <svg className="w-6 h-6 text-northern-green-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-white">Phone</p>
-                    <p className="text-gray-400 text-sm">236-380-1394</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="glass p-3 rounded-lg">
-                    <svg className="w-6 h-6 text-northern-green-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-white">Location</p>
-                    <p className="text-gray-400 text-sm">Canada</p>
-                  </div>
-                </div>
-              </div>
+            <div>
+              <label htmlFor="name" className="block text-sm text-subtle mb-1.5 font-medium">
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                value={formData.name}
+                onChange={handleChange}
+                className={inputClass}
+              />
             </div>
 
-            {/* Services highlight */}
-            <div className="glass p-8 rounded-2xl">
-              <h4 className="text-xl font-bold mb-4 text-white">What We Offer</h4>
-              <div className="space-y-3">
-                <div className="flex items-center text-gray-300">
-                  <svg className="w-5 h-5 mr-3 text-northern-green-light" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  AI Mineral Exploration Platform
-                </div>
-                <div className="flex items-center text-gray-300">
-                  <svg className="w-5 h-5 mr-3 text-northern-green-light" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  Software & AI Consulting
-                </div>
-                <div className="flex items-center text-gray-300">
-                  <svg className="w-5 h-5 mr-3 text-northern-green-light" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  Mechanical Engineering Services
-                </div>
-                <div className="flex items-center text-gray-300">
-                  <svg className="w-5 h-5 mr-3 text-northern-green-light" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  Custom ML Model Development
-                </div>
-              </div>
+            <div>
+              <label htmlFor="company" className="block text-sm text-subtle mb-1.5 font-medium">
+                Company
+              </label>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                value={formData.company}
+                onChange={handleChange}
+                className={inputClass}
+              />
             </div>
 
-            {/* CTA */}
-            <div className="glass p-8 rounded-2xl bg-gradient-to-br from-northern-green-dark to-northern-green">
-              <h4 className="text-xl font-bold mb-3 text-white">Ready to Start?</h4>
-              <p className="text-gray-200 text-sm mb-4">
-                Join the companies leveraging Northern AI's technology for competitive advantage.
+            <div>
+              <label htmlFor="email" className="block text-sm text-subtle mb-1.5 font-medium">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                value={formData.email}
+                onChange={handleChange}
+                className={inputClass}
+              />
+            </div>
+
+            <div>
+              <label htmlFor="interest" className="block text-sm text-subtle mb-1.5 font-medium">
+                I am interested in
+              </label>
+              <select
+                id="interest"
+                name="interest"
+                required
+                value={formData.interest}
+                onChange={handleChange}
+                className={inputClass}
+              >
+                <option value="" disabled>
+                  Select one
+                </option>
+                <option value="Free first look">Free first look</option>
+                <option value="Booking a walkthrough">Booking a walkthrough</option>
+                <option value="Something else">Something else</option>
+              </select>
+            </div>
+
+            <div>
+              <label htmlFor="message" className="block text-sm text-subtle mb-1.5 font-medium">
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                value={formData.message}
+                onChange={handleChange}
+                rows="4"
+                className={`${inputClass} resize-none`}
+              />
+            </div>
+
+            {status === 'error' && (
+              <p className="text-red-400 text-sm">
+                Something went wrong. Please try again.
               </p>
-              <div className="flex justify-center mb-3">
-                <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <p className="text-sm text-gray-300">
-                <strong>Indigenous-owned.</strong> Canadian-focused. World-class technology.
-              </p>
-            </div>
-          </div>
-        </div>
+            )}
+
+            <button
+              type="submit"
+              disabled={status === 'submitting'}
+              className="w-full px-8 py-3.5 bg-accent hover:bg-accent-hover text-bg font-semibold rounded-full transition-all disabled:opacity-50 disabled:cursor-not-allowed text-sm mt-2 hover:shadow-lg hover:shadow-accent/15"
+            >
+              {status === 'submitting' ? 'Sending...' : 'Book a walkthrough'}
+            </button>
+          </form>
+        )}
       </div>
     </section>
   );

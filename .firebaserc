@@ -1,5 +1,16 @@
 {
   "projects": {
-    "default": "northern-ai-website"
-  }
+    "default": "northern-ai-website-ed215",
+    "firebase hosting:channel:deploy preview": "northern-ai-website-ed215"
+  },
+  "targets": {
+    "northern-ai-website-ed215": {
+      "hosting": {
+        "primary": [
+          "northern-ai-website-ed215"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
